@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Gemini Style Editor Font",
+  "name": "Gemini Style Editor",
   "version": "2.3",
-  "description": "Applies custom font and change content width in Gemini chatbot",
+  "description": "Applies custom font and change content width in Gemini chatbot \n by https://github.com/amirhosseindotzip",
+
   "permissions": [
     "storage",       
     "activeTab",     

@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
-/* Apply the font to all common text elements on the page */
 body,
 p,
 h1,
@@ -24,32 +23,25 @@ button {
     font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif !important;
 }
 
-/* Specifically target elements with the 'fa' language attribute */
 *:lang(fa) {
     font-family: 'Vazirmatn', sans-serif !important;
 }
 
 
-/* Target the main conversation container and set a new max-width */
 .conversation-container {
     max-width: 90% !important;
-    /* Adjust '90%' to your desired width (e.g., 1200px or 100%) */
     width: 90% !important;
 }
 
-/* Target the input area container to match the width of the conversation */
 .input-area-container {
     max-width: 90% !important;
-    /* Must match the width set for .conversation-container */
     width: 90% !important;
 }
 
-/* Optional: To make the input box (user query bubble) full width inside its container */
 user-query {
     max-width: 100% !important;
 }
 
-/* Optional: To make the response and user bubbles use the full width of the container */
 .user-query-bubble-with-background,
 .response-container .response-text-container {
     max-width: 100% !important;

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Gemini Vazirmatn Font",
-  "version": "1.0",
-  "description": "Applies the Vazirmatn font to gemini.google.com for better readability.",
+  "name": "Gemini Style Editor Font",
+  "version": "2.3",
+  "description": "Applies custom font and change content width in Gemini chatbot",
   "permissions": [
     "storage",       
     "activeTab",     

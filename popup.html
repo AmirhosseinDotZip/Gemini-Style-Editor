@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Gemini Customizer</title>
+    <title>Gemini Style Editor Font</title>
     <style>
         /* CSS Variables for easy color management */
         :root {
@@ -15,7 +15,8 @@
         }
 
         body {
-            width: 280px;
+            /* Increased width to accommodate the URL input */
+            width: 350px;
             padding: 0;
             margin: 0;
             font-family: 'Google Sans', 'Roboto', sans-serif;
@@ -45,18 +46,23 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 12px;
-            /* Added internal padding */
             margin-bottom: 8px;
             cursor: pointer;
             border-radius: 6px;
             transition: background-color 0.2s ease;
             box-sizing: border-box;
-            /* Include padding in width/height */
+            /* Added padding-right to make room for the pencil icon */
+            padding-right: 0;
         }
 
         .option:hover {
             background-color: #f1f3f4;
-            /* Light hover effect */
+        }
+
+        .option-content {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
         }
 
         .option-text {
@@ -64,7 +70,33 @@
             font-weight: 400;
             color: var(--text-color);
             flex-grow: 1;
-            margin-right: 12px;
+        }
+
+        /* Edit Icon Styling */
+        .edit-icon {
+            cursor: pointer;
+            margin-left: 8px;
+            color: #70757a;
+            transition: color 0.2s ease;
+            padding: 8px 12px 8px 8px;
+        }
+
+        .edit-icon:hover {
+            color: var(--primary-color);
+        }
+
+        /* Font URL Input Styling */
+        #fontUrlInput {
+            width: 90%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 12px;
+            box-sizing: border-box;
+            display: none;
+            /* Hidden by default */
         }
 
         /* Modern Toggle Switch Styling (Hides native checkbox) */
@@ -87,7 +119,6 @@
             border-radius: 10px;
             transition: background-color 0.4s;
             flex-shrink: 0;
-            /* Prevent the slider from shrinking on small screens */
         }
 
         /* The Custom Switch Knob */
@@ -124,7 +155,7 @@
         }
 
         .hintx {
-            font-size: 9px;
+            font-size: 10px;
             color: #70757a;
             margin-top: 15px;
             padding-top: 10px;
@@ -134,7 +165,7 @@
             font-size: 11px;
             text-decoration: none;
             font-weight: bold;
-            color: #9542d4;
+            color: #d2763d;
             margin-top: 15px;
             padding-top: 10px;
             border-top: 1px solid var(--border-color);
@@ -144,13 +175,20 @@
 
 <body>
     <div class="container">
-        <h4>Gemini Customizer</h4>
+        <h4>Gemini Style Editor Font</h4>
 
-        <label for="setFont" class="option">
-            <span class="option-text">Set Vazirmatn Font</span>
-            <input type="checkbox" id="setFont">
-            <span class="slider"></span>
-        </label>
+        <div id="setFontContainer">
+            <label for="setFont" class="option" style="padding-right: 8px;">
+                <div class="option-content">
+                    <span class="option-text">Set Custom Font</span>
+                    <span class="edit-icon" id="editFontIcon">&#9998;</span>
+                </div>
+                <input type="checkbox" id="setFont">
+                <span class="slider"></span>
+            </label>
+            <input type="text" id="fontUrlInput"
+                placeholder="Paste Google Fonts URL (e.g., https://fonts.googleapis.com/css2?family=Rubik...)" />
+        </div>
 
         <label for="expandedMode" class="option">
             <span class="option-text">Expanded Content Width</span>
@@ -158,7 +196,8 @@
             <span class="slider"></span>
         </label>
 
-        <p class="hint">Developed by <a href="github.com/amirhosseindotzip">amirhosseindotzip</a></p>
+        <p class="hint">Developed by <a href="https://github.com/amirhosseindotzip"
+                target="_blank">amirhosseindotzip</a></p>
         <p class="hintx">If you don't see any changes, reload the page</p>
     </div>
     <script src="popup.js"></script>

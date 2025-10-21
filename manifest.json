@@ -3,10 +3,23 @@
   "name": "Gemini Vazirmatn Font",
   "version": "1.0",
   "description": "Applies the Vazirmatn font to gemini.google.com for better readability.",
+  "permissions": [
+    "storage",       
+    "activeTab",     
+    "scripting"      
+  ],
+  "action": {
+    "default_popup": "popup.html",  
+    "default_icon": {
+      "16": "icons/icon16.png",  
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["https://gemini.google.com/*"],
-      "css": ["styles.css"]
+      "js": ["content.js"] 
     }
   ]
 }

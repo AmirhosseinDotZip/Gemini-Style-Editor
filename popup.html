@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gemini Customizer</title>
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --primary-color: #1a73e8;
+            /* Google Blue */
+            --text-color: #202124;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --border-color: #dadce0;
+        }
+
+        body {
+            width: 280px;
+            padding: 0;
+            margin: 0;
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            border-radius: 8px;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        /* Header Styling */
+        h4 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        /* Checkbox Container Styling: The label now acts as the clickable container */
+        .option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            /* Added internal padding */
+            margin-bottom: 8px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+            box-sizing: border-box;
+            /* Include padding in width/height */
+        }
+
+        .option:hover {
+            background-color: #f1f3f4;
+            /* Light hover effect */
+        }
+
+        .option-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-color);
+            flex-grow: 1;
+            margin-right: 12px;
+        }
+
+        /* Modern Toggle Switch Styling (Hides native checkbox) */
+        input[type="checkbox"] {
+            /* Hide the actual checkbox */
+            opacity: 0;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+
+        /* The Custom Switch Track */
+        .slider {
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 20px;
+            background-color: var(--border-color);
+            border-radius: 10px;
+            transition: background-color 0.4s;
+            flex-shrink: 0;
+            /* Prevent the slider from shrinking on small screens */
+        }
+
+        /* The Custom Switch Knob */
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: var(--card-background);
+            border-radius: 50%;
+            transition: transform 0.4s, background-color 0.4s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Checked state styles */
+        input:checked+.slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(16px);
+            background-color: var(--card-background);
+        }
+
+        /* Footer Hint */
+        .hint {
+            font-size: 11px;
+            color: #70757a;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .hintx {
+            font-size: 9px;
+            color: #70757a;
+            margin-top: 15px;
+            padding-top: 10px;
+        }
+
+        .hint a {
+            font-size: 11px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #9542d4;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h4>Gemini Customizer</h4>
+
+        <label for="setFont" class="option">
+            <span class="option-text">Set Vazirmatn Font</span>
+            <input type="checkbox" id="setFont">
+            <span class="slider"></span>
+        </label>
+
+        <label for="expandedMode" class="option">
+            <span class="option-text">Expanded Content Width</span>
+            <input type="checkbox" id="expandedMode">
+            <span class="slider"></span>
+        </label>
+
+        <p class="hint">Developed by <a href="github.com/amirhosseindotzip">amirhosseindotzip</a></p>
+        <p class="hintx">If you don't see any changes, reload the page</p>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

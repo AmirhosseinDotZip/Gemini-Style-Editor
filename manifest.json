@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Vazirmatn Font",
+  "version": "1.0",
+  "description": "Applies the Vazirmatn font to gemini.google.com for better readability.",
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "css": ["styles.css"]
+    }
+  ]
+}
